@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>❤️❤️ FOR MY PRANISHAAAA ❤️❤️❤️ </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="buton1"><span>Yes</span></div>
+<div id="buton2"><span>No</span></div>
+<div id="valentine-container">
+  <div id="valentine-message">Please be my valentineeeee, Pranisha?🥺</div>
+  <img id="valentine-image" src="./image.jpg" >
+</div>
+
+<div id="new-text">YAYYYY TAKE THE KISSSYYY HEHEHHEE, I LOVEEEE YOUUUU SOOO MUCHH BABYY</div>
+<img id="new-image" src="https://media.tenor.com/dVMwRYiAGsAAAAAi/kiss.gif" alt="ayıcıklarr">
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var buton1 = document.getElementById("buton1");
+  var buton2 = document.getElementById("buton2");
+  var buton1Text = document.querySelector("#buton1 span");
+  var valentineMessage = document.getElementById("valentine-message");
+  var valentineImage = document.getElementById("valentine-image");
+  var newText = document.getElementById("new-text");
+  var newImage = document.getElementById("new-image");
+
+  var originalTopMessage = valentineMessage.offsetTop;
+  var originalTopImage = valentineImage.offsetTop;
+
+  buton2.addEventListener("click", function() {
+    var currentWidth = buton1.offsetWidth;
+    var currentHeight = buton1.offsetHeight;
+
+  
+    var newWidth = currentWidth * 1.1;
+    var newHeight = currentHeight * 1.1;
+    buton1.style.width = newWidth + "px";
+    buton1.style.height = newHeight + "px";
+
+  
+    var currentFontSize = parseInt(window.getComputedStyle(buton1Text).fontSize);
+    var newFontSize = currentFontSize + 1;
+    buton1Text.style.fontSize = newFontSize + "px";
+
+    valentineMessage.style.transition = "top 0.3s ease"; 
+    valentineImage.style.transition = "top 0.3s ease"; 
+    valentineMessage.style.top = originalTopMessage - buton1.offsetHeight + "px";
+    valentineImage.style.top = originalTopImage - buton1.offsetHeight + "px";
+  });
+
+  buton1.addEventListener("click", function() {
+   
+    buton1.style.visibility = "hidden";
+    buton2.style.visibility = "hidden";
+   
+    valentineMessage.style.visibility = "hidden";
+    valentineImage.style.visibility = "hidden";
+   
+    setTimeout(function() {
+      
+      if (newText && newImage) {
+        newText.style.visibility = "visible";
+       
+        newImage.src = "https://media.tenor.com/dVMwRYiAGsAAAAAi/kiss.gif";
+        newImage.style.visibility = "visible";
+      }
+    }, 300); 
+  });
+
+  
+  if (newText && newImage) {
+    newText.style.visibility = "hidden";
+    newImage.style.visibility = "hidden";
+  }
+});
+
+</script>
+</html>
